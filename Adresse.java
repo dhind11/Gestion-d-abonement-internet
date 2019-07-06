@@ -1,3 +1,4 @@
+
 public class Adresse {
 //Attributs
 int numrue,nomrue,codepostal,codeville;

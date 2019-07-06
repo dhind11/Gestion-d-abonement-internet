@@ -12,7 +12,17 @@ public Ville(int codeVille, Vector<AbonnementPro> abonnementsPro, Vector<Abonnem
 	AbonnementsResid = abonnementsResid;
 }
 public Ville() {}
+/*public Ville(int CodeVille)
+{
+	Vector<AbonnementPro> AbonnementsPro=new Vector<AbonnementPro>();
+	Vector<AbonnementResid> AbonnementsResid=new Vector<AbonnementResid>();
+	String option="add";int numbertype;
+	while(option=="add")
+	{
+		System.out.println("Choisir type abonnement à vouloir ajouter");
+	}
 
+}*/
 //getters & setters
 public int getCodeVille() {
 	return CodeVille;
@@ -35,4 +45,9 @@ public void setAbonnementsResid(Vector<AbonnementResid> abonnementsResid) {
 
 //Methods
 //affichage
+
+public void AjouterAbonne(int codeville)
+{
+	
+}
 }
