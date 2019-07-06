@@ -1,11 +1,11 @@
 
 public class Client {
 //Attributs
-private int numClient;//see prob of int if numClient is too long
+private static int numClient;//see prob of int if numClient is too long
 private String numTel;
 private String adresse;
 private double dette;//should i give it 0 by default 
-private double pénalitéRetard;// should i give it 0 by default 
+private double pÃ©nalitÃ©Retard;// should i give it 0 by default 
 
 //Constructer
 public Client(int numClient, String numTel, String adresse) {
@@ -14,7 +14,7 @@ public Client(int numClient, String numTel, String adresse) {
 	this.numTel = numTel;
 	this.adresse = adresse;
 	this.dette = 0;
-	this.pénalitéRetard = 0;
+	this.pÃ©nalitÃ©Retard = 0;
 }
 
 public Client() {}
@@ -44,11 +44,11 @@ public double getDette() {
 public void setDette(double dette) {
 	this.dette = dette;
 }
-public double getPénalitéRetard() {
-	return pénalitéRetard;
+public double getPÃ©nalitÃ©Retard() {
+	return pÃ©nalitÃ©Retard;
 }
-public void setPénalitéRetard(double pénalitéRetard) {
-	this.pénalitéRetard = pénalitéRetard;
+public void setPÃ©nalitÃ©Retard(double pÃ©nalitÃ©Retard) {
+	this.pÃ©nalitÃ©Retard = pÃ©nalitÃ©Retard;
 }
 
 //Methods
