@@ -1,7 +1,6 @@
 
 public class CategorieCnx {
 //enumeration for type	
-enum Typecnx{Ethernet,USB,WIFI;}
 private Typecnx type;
 private String debit;
 private int duree;
@@ -20,8 +19,8 @@ public CategorieCnx() {}
 public Typecnx getType() {
 	return type;
 }
-public void setType(Typecnx type) {
-	this.type = type;
+public void setType(String type) {
+	this.type=Typecnx.valueOf(type);
 }
 public String getDebit() {
 	return debit;

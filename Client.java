@@ -1,4 +1,4 @@
-
+import java.io.*;
 public class Client {
 //Attributs
 private int numClient;//see prob of int if numClient is too long
@@ -41,7 +41,7 @@ public void setAdresse(String adresse) {
 public double getDette() {
 	return dette;
 }
-public void setDette(double dette) {
+private void setdette(double dette) {
 	this.dette = dette;
 }
 public double getPénalitéRetard() {
@@ -52,7 +52,10 @@ public void setPénalitéRetard(double pénalitéRetard) {
 }
 
 //Methods
-
+public void Afficher()
+{
+	System.out.println(this.toString());
+}
 
 
 }

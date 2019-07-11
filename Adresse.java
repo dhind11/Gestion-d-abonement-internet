@@ -1,9 +1,10 @@
 
 public class Adresse {
 //Attributs
-int numrue,nomrue,codepostal,codeville;
+private int numrue,codepostal,codeville;
+private String nomrue;
 //Constructors
-public Adresse(int numrue, int nomrue, int codepostal, int codeville) {
+public Adresse(int numrue,String nomrue, int codepostal, int codeville) {
 	this.numrue = numrue;
 	this.nomrue = nomrue;
 	this.codepostal = codepostal;
@@ -17,10 +18,10 @@ public int getNumrue() {
 public void setNumrue(int numrue) {
 	this.numrue = numrue;
 }
-public int getNomrue() {
+public String getNomrue() {
 	return nomrue;
 }
-public void setNomrue(int nomrue) {
+public void setNomrue(String nomrue) {
 	this.nomrue = nomrue;
 }
 public int getCodepostal() {
