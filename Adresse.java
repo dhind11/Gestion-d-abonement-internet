@@ -2,13 +2,14 @@
 public class Adresse {
 //Attributs
 protected int numrue,codepostal,codeville;
-protected String nomrue;
+protected String nomrue,ville;
 //Constructors
-public Adresse(int numrue,String nomrue, int codepostal, int codeville) {
+public Adresse(int numrue,String nomrue,int codeville,String ville, int codepostal) {
 	this.numrue = numrue;
 	this.nomrue = nomrue;
-	this.codepostal = codepostal;
-	this.codeville = codeville;
+	this.codeville=codeville;
+	this.ville=ville;
+	this.codepostal=codepostal;
 }
 public Adresse() {}
 //getters & setters 

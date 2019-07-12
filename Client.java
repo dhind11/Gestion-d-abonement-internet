@@ -5,7 +5,7 @@ protected static int numClient=0;//see prob of int if numClient is too long
 protected String numTel;
 protected Adresse adresse;
 protected double dette;//should i give it 0 by default 
-protected double pénalitéRetard;// should i give it 0 by default 
+protected double penaliteRetard;// should i give it 0 by default 
 
 //Constructer
 public Client(String numTel, Adresse adresse) {
@@ -40,8 +40,8 @@ private void setdette(double dette) {
 public double getPénalitéRetard() {
 	return pénalitéRetard;
 }
-public void setPénalitéRetard(double pénalitéRetard) {
-	this.pénalitéRetard = pénalitéRetard;
+public void setPenaliteRetard(double penaliteRetard) {
+	this.penaliteRetard = penaliteRetard;
 }
 
 //Methods

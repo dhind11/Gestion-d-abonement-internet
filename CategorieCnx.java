@@ -6,10 +6,10 @@ private String debit;
 private int duree;
 private double tarif;
 //constructor
-public CategorieCnx(String debit, int durée, Typecnx type, double tarif) {
+public CategorieCnx(String debit, int duree, Typecnx type, double tarif) {
 	
 	this.debit = debit;
-	this.duree = durée;
+	this.duree = duree;
 	this.type = type;
 	this.tarif = tarif;
 }
