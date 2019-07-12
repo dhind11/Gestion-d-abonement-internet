@@ -5,21 +5,21 @@ public class PersonnePhysique extends Client{
 private int NPI;//Numero de piece d'identité
 private String nom;
 private String prenom;
-private Date datenaiss;//date de naissance
+private MaDatte datenaiss;//date de naissance
 
 //Constructor
-public PersonnePhysique(int numClient, String numTel, String adresse, int nPI, String nom, String prenom,
-		Date datenaiss) {
-	super(numClient, numTel, adresse);
+public PersonnePhysique(String numTel, Adresse adresse, int nPI, String nom, String prenom,
+		MaDatte datenaiss) {
+	super(numTel, adresse);
 	NPI = nPI;
 	this.nom = nom;
 	this.prenom = prenom;
 	this.datenaiss = datenaiss;
 }
-public PersonnePhysique(int numClient, String numTel, String adresse) {
-	super(numClient, numTel, adresse);
+public PersonnePhysique(int numClient, String numTel, Adresse adresse) {
+	super(numTel, adresse);
 }
-
+public PersonnePhysique() {}
 //Getters and setters
 public int getNPI() {
 	return NPI;
@@ -39,14 +39,16 @@ public String getPrenom() {
 public void setPrenom(String prenom) {
 	this.prenom = prenom;
 }
-public Date getDatenaiss() {
+public MaDatte getDatenaiss() {
 	return datenaiss;
 }
-public void setDatenaiss(Date datenaiss) {
-	this.datenaiss = datenaiss;
+public void setDatenaiss(String datenaiss) {
+	this.datenaiss=new MaDatte(datenaiss);
 }
 
 //Methods
-
-
+public void afficher()
+{
+	System.out.println("PersonnePhysique [NPI=" + NPI + ", nom=" + nom + ", prenom=" + prenom + ", datenaiss=" + datenaiss + "]");
+}
 }

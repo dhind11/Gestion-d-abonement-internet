@@ -1,8 +1,8 @@
 
 public class Adresse {
 //Attributs
-private int numrue,codepostal,codeville;
-private String nomrue;
+protected int numrue,codepostal,codeville;
+protected String nomrue;
 //Constructors
 public Adresse(int numrue,String nomrue, int codepostal, int codeville) {
 	this.numrue = numrue;
@@ -37,4 +37,12 @@ public void setCodeville(int codeville) {
 	this.codeville = codeville;
 }
 //Methods
+public String toString() {
+	return "Adresse [numrue=" + numrue + ", codepostal=" + codepostal + ", codeville=" + codeville + ", nomrue="
+			+ nomrue + "]";
+}
+public void afficher()
+{
+    System.out.println(this.toString());
+}
 }

@@ -1,16 +1,15 @@
 import java.io.*;
 public class Client {
 //Attributs
-private int numClient;//see prob of int if numClient is too long
-private String numTel;
-private String adresse;
-private double dette;//should i give it 0 by default 
-private double pénalitéRetard;// should i give it 0 by default 
+protected static int numClient=0;//see prob of int if numClient is too long
+protected String numTel;
+protected Adresse adresse;
+protected double dette;//should i give it 0 by default 
+protected double pénalitéRetard;// should i give it 0 by default 
 
 //Constructer
-public Client(int numClient, String numTel, String adresse) {
-	super();
-	this.numClient = numClient;
+public Client(String numTel, Adresse adresse) {
+	numClient++;
 	this.numTel = numTel;
 	this.adresse = adresse;
 	this.dette = 0;
@@ -20,22 +19,16 @@ public Client(int numClient, String numTel, String adresse) {
 public Client() {}
 
 //Getters & Setters
-public int getNumClient() {
-	return numClient;
-}
-public void setNumClient(int numClient) {
-	this.numClient = numClient;
-}
 public String getNumTel() {
 	return numTel;
 }
 public void setNumTel(String numTel) {
 	this.numTel = numTel;
 }
-public String getAdresse() {
+public Adresse getAdresse() {
 	return adresse;
 }
-public void setAdresse(String adresse) {
+public void setAdresse(Adresse adresse) {
 	this.adresse = adresse;
 }
 public double getDette() {

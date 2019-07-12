@@ -9,12 +9,15 @@ protected MaDatte FinCnx;
 protected MaDatte DernierPaiment;
 protected boolean retard,resilier;
 //Constructers
-public Abonnement(CategorieCnx categorie,MaDatte dateDebCnx,MaDatte finCnx,MaDatte dernierPaiment) {
+public Abonnement(CategorieCnx categorie,MaDatte dateDebCnx) {
 
 	this.categorie = categorie;
 	this.DateDebCnx = dateDebCnx;
-	this.FinCnx = finCnx;
-	this.DernierPaiment = dernierPaiment;
+	this.FinCnx =(this.DateDebCnx).AddToDate((this.categorie).getDuree());
+	LocalDate date = LocalDate.now();  
+	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");  
+	String currentDate=date.format(formatter);//current date to string
+	this.DernierPaiment=new MaDatte(currentDate);
 	this.retard=false;
 	this.resilier=false;
 }
@@ -61,7 +64,7 @@ public boolean getresilier()
 {
 	return this.resilier;
 }
-//Methods
+//Methods***********************************************************************************
 //abonnement payé , le relancer se fait comme suit:
 public void Relancer()
 {
@@ -101,8 +104,13 @@ public boolean EstRetard()
 		else return false;// n'est pas en retard
 }
 //affichage()
+
 public void Afficher()
 {
 	System.out.println(this.toString());
+}
+public String toString() {
+	return "Abonnement [categorie=" + categorie + ", DateDebCnx=" + DateDebCnx + ", FinCnx=" + FinCnx
+			+ ", DernierPaiment=" + DernierPaiment + ", retard=" + retard + ", resilier=" + resilier + "]";
 }
 }
