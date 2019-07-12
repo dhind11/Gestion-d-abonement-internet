@@ -13,7 +13,7 @@ public Client(String numTel, Adresse adresse) {
 	this.numTel = numTel;
 	this.adresse = adresse;
 	this.dette = 0;
-	this.pénalitéRetard = 0;
+	this.penaliteRetard = 0;
 }
 
 public Client() {}
@@ -38,7 +38,7 @@ private void setdette(double dette) {
 	this.dette = dette;
 }
 public double getPénalitéRetard() {
-	return pénalitéRetard;
+	return penaliteRetard;
 }
 public void setPenaliteRetard(double penaliteRetard) {
 	this.penaliteRetard = penaliteRetard;

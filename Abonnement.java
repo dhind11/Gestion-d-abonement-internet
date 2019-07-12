@@ -1,5 +1,6 @@
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.*;
 public class Abonnement {
 	
 //Attributs
@@ -8,9 +9,11 @@ protected MaDatte DateDebCnx;
 protected MaDatte FinCnx;
 protected MaDatte DernierPaiment;
 protected boolean retard,resilier;
+char typeAbonnement;
 //Constructers
-public Abonnement(CategorieCnx categorie,MaDatte dateDebCnx) {
+public Abonnement(CategorieCnx categorie,MaDatte dateDebCnx,char typeAbonnement) {
 
+	this.typeAbonnement=typeAbonnement;
 	this.categorie = categorie;
 	this.DateDebCnx = dateDebCnx;
 	this.FinCnx =(this.DateDebCnx).AddToDate((this.categorie).getDuree());
@@ -24,6 +27,10 @@ public Abonnement(CategorieCnx categorie,MaDatte dateDebCnx) {
 public Abonnement() {}
 
 //Getters & Setters
+public char gettypeAbonnement()
+{
+	return this.typeAbonnement;
+}
 public CategorieCnx getCategorie() {
 	return categorie;
 }
@@ -46,6 +53,7 @@ public MaDatte getDernierPaiment() {
 	return DernierPaiment;
 }
 public void setDernierPaiment(MaDatte dernierPaiment) {
+
 	DernierPaiment = dernierPaiment;
 }
 public void setretard()
@@ -67,13 +75,15 @@ public boolean getresilier()
 //Methods***********************************************************************************
 //abonnement payé , le relancer se fait comme suit:
 public void Relancer()
+
 {
+	this.DernierPaiment=this.DateDebCnx;
 	//*******get current date********
 			LocalDate date = LocalDate.now();  
 			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");  
 			String currentDate=date.format(formatter);//current date to string
 			//**********************
-	this.DernierPaiment=new MaDatte(currentDate);
+	this.DateDebCnx=new MaDatte(currentDate);
 	this.resilier=false;
 	this.retard=false;
 }
@@ -103,6 +113,7 @@ public boolean EstRetard()
 		if(x.depasserdate(y)) {return true;}//est en retard
 		else return false;// n'est pas en retard
 }
+
 //affichage()
 
 public void Afficher()
@@ -113,4 +124,12 @@ public String toString() {
 	return "Abonnement [categorie=" + categorie + ", DateDebCnx=" + DateDebCnx + ", FinCnx=" + FinCnx
 			+ ", DernierPaiment=" + DernierPaiment + ", retard=" + retard + ", resilier=" + resilier + "]";
 }
+//peut etre resilier s'il depasse 2 mois 
+public boolean PeutEtreResilier(MaDatte date)
+{
+	
+	if (  ((this.DateDebCnx).AddToDate(2)).depasserdate(date) ) {return true;}
+	else return false;
+}
+
 }

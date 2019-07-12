@@ -3,8 +3,8 @@ public class AbonnementPro extends Abonnement {
 //Attribut
 private PersonneMorale PM;//personne morale
 //Constructors
-public AbonnementPro(CategorieCnx categorie,MaDatte dateDebCnx,PersonneMorale PM) {
-		super(categorie, dateDebCnx);
+public AbonnementPro(CategorieCnx categorie,MaDatte dateDebCnx,char typeAbonnement,PersonneMorale PM) {
+		super(categorie, dateDebCnx,typeAbonnement);
 		this.PM=PM;
 	}
 public AbonnementPro(){}
